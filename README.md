@@ -6,6 +6,7 @@ History of chatbots dates back to 1966 when a computer program called ELIZA was 
 
 On similar lines let's create a very basic chatbot utlising the Python's NLTK library.It's a very simple bot with hardly any cognitive skills,but still a good way to get into NLP and get to know about chatbots.
 
+Chatbots play a crucial role in modern businesses as they possess the capability to efficiently address customer inquiries and provide information without causing delays. By automating various procedures, they significantly reduce the workload on customer support teams. Achieving this level of automation is made possible through the implementation of Machine Learning, Artificial Intelligence, and Data Science techniques. Chatbots operate by analyzing the input provided by customers and generating appropriate responses based on predefined mappings. To train a chatbot, Recurrent Neural Networks can be employed along with intention datasets in JSON format, while the implementation can be carried out using the Python programming language. The nature of the chatbot, whether it is specific to a particular domain or caters to a wide range of topics, depends on the desired objective.
 
 # Outline
 * [Motivation](#motivation)
