@@ -1,0 +1,98 @@
+### File: src/chatbot.py
+import nltk
+from nltk.chat.util import Chat, reflections
+
+nltk.download('punkt')
+
+# Define pairs for the chatbot
+pairs = [
+    [
+        r"my name is (.*)",
+        ["Hello %1, How can I help you today?"]
+    ],
+    [
+        r"hi|hello|hey",
+        ["Hello! How can I assist you?"]
+    ],
+    [
+        r"(.*) your name?",
+        ["I am a chatbot created using NLTK. What's your name?"]
+    ],
+    [
+        r"how are you (.*)?",
+        ["I'm doing well, thank you. How can I assist you?"]
+    ],
+    [
+        r"(.*) created you?",
+        ["I was created as a project example using the NLTK library."]
+    ],
+    [
+        r"(.*) (location|city)?",
+        ["I am a virtual entity, but I can help with your queries!"]
+    ],
+    [
+        r"quit",
+        ["Goodbye! Have a great day!"]
+    ]
+]
+
+# Create chatbot with pairs and reflections
+chatbot = Chat(pairs, reflections)
+
+def start_chat():
+    """Start the chatbot interaction."""
+    print("Hello! I am your chatbot. Type 'quit' to exit.")
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'quit':
+            print("Chatbot: Goodbye!")
+            break
+        response = chatbot.respond(user_input)
+        print(f"Chatbot: {response}")
+
+if __name__ == "__main__":
+    start_chat()
+
+### File: README.md
+# Simple Chatbot in Python using NLTK
+
+This project demonstrates a basic chatbot implementation using the NLTK library.
+
+## Features
+- Handles simple conversational patterns.
+- Uses regular expressions to respond to user queries.
+- Easy to customize with additional conversation patterns.
+
+## Dependencies
+- Python 3
+- NLTK
+
+Install the required library:
+```bash
+pip install nltk
+```
+
+## Usage
+Run the chatbot from the terminal:
+```bash
+python src/chatbot.py
+```
+Type 'quit' to exit the chat.
+
+## Structure
+```
+chatbot-project/
+├── src/
+│   └── chatbot.py       # Main chatbot implementation
+├── README.md            # Project description and usage instructions
+└── requirements.txt     # Dependencies
+```
+
+### File: requirements.txt
+nltk
+
+### Additional Notes
+- You can expand the `pairs` list in `chatbot.py` to include more complex conversational patterns.
+- NLTK's `reflections` provides default responses for common phrases like "I am" and "you are." You can modify it for more personality.
+
+This project is designed for learning and demonstration purposes. For advanced chatbots, consider using NLP libraries like Rasa or transformers.
